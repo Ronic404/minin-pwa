@@ -1,5 +1,5 @@
-const staticCacheName = 's-app-v1'
-const dynamicCacheName = 'd-app-v1'
+const staticCacheName = 's-app-v2'
+const dynamicCacheName = 'd-app-v2'
 
 const assetUrls = [
   '/index.html',
@@ -17,7 +17,7 @@ self.addEventListener('install', async () => {
 
 self.addEventListener('activate', async event => {
   const cacheKeys = await caches.keys()
-  
+
   await Promise.all(
     cacheKeys
       .filter(key => ![staticCacheName, dynamicCacheName].includes(key))

@@ -12,7 +12,7 @@ body {
 header {
   height: 80px;
   background: #4499b9;
-  margin: 20px 0;
+  margin-bottom: 20px;
   color: white;
   display: flex;
   justify-content: center;
@@ -36,4 +36,12 @@ header {
 .card-title {
   font-size: 1.2rem;
   text-transform: capitalize;
+}
+
+#install-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 10px;
+  cursor: pointer;
 }

@@ -1,3 +1,6 @@
+import './appInstallation.js'
+import './showNotifications.js'
+
 window.addEventListener('load', async () => {
   if ('serviceWorker' in navigator) {
     try {
