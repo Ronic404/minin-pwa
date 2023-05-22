@@ -3,14 +3,17 @@ const dynamicCacheName = 'd-app-v2'
 
 const assetUrls = [
   '/index.html',
-  'offline.html',
+  '/offline.html',
+  '/push.js',
   '/js/app.js',
+  '/js/appInstallation.js',
+  '/js/showNotifications.js',
   '/css/styles.css',
 ]
 
 self.addEventListener('install', async () => {
   console.log('sw install')
-  
+
   const cache = await caches.open(staticCacheName)
   await cache.addAll(assetUrls)
 })
@@ -34,7 +37,31 @@ self.addEventListener('fetch', event => {
   } else {
     event.respondWith(networkFirst(request))
   }
+})
 
+self.addEventListener('push', event => {
+  let options = {
+    body: 'This notification was generated from a push!',
+    vibrate: [100, 50, 100],
+    data: {
+      dateOfArrival: Date.now(),
+      primaryKey: '2',
+    },
+    actions: [
+      {
+        action: 'explore',
+        title: 'Explore this new world',
+      },
+      {
+        action: 'close',
+        title: 'Close',
+      },
+    ]
+  }
+
+  event.waitUntil(
+    self.registration.showNotification('Hello world', options)
+  )
 })
 
 async function cacheFirst(request) {

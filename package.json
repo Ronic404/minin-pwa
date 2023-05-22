@@ -1,0 +1,23 @@
+{
+  "name": "minin-pwa",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sw.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ronic404/minin-pwa.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ronic404/minin-pwa/issues"
+  },
+  "homepage": "https://github.com/Ronic404/minin-pwa#readme",
+  "dependencies": {
+    "web-push": "^3.6.1"
+  }
+}

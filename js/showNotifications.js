@@ -16,9 +16,9 @@ const randomNotification = (count = 1) => {
 const getAllowNotificationsAccess = () => {
   Notification.requestPermission().then((result) => {
     if (result === "granted") {
-      randomNotification()
+      // randomNotification()
     }
   })
 }
 
-setTimeout(getAllowNotificationsAccess, 3000)
+// setTimeout(getAllowNotificationsAccess, 3000)
